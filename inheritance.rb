@@ -1,6 +1,13 @@
 #!/usr/local/rvm/rubies/ruby-1.9.3-p547/bin/ruby
 class Area
    AUTHOR = "RAMKUMAR KUPPUCHAMY"
+   
+   #Attribute definitions to the getters,setters and accessors
+
+   #attr_reader :height, :width
+   #attr_writer :height, :width
+   #attr_accessor :height, :width 
+
    def initialize(a,b)
        @width,@height = a,b
    end
@@ -36,6 +43,9 @@ end
 square_area = Square.new(10,10)
 rect_area = Rectangle.new(10,20)
 tri_area = Triangle.new(10,20,30)
+tri_area1 = Area.allocate
+
+puts "Allocated Triangle Area: #{tri_area1.getArea}"
 
 puts Area::AUTHOR
 
