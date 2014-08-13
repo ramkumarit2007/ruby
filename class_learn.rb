@@ -7,13 +7,15 @@ class Employee
     end
     
     #Accessor methods
-    def print_id
+    def getId
 	@id
     end
 
-    def print_name
+    def getName
 	@name
     end
+
+    private :getId, :getName
 
     def setId=(value)
        @id = value
@@ -27,6 +29,12 @@ class Employee
       puts "Employee Count: #@@count"
     end
 
+    def access_test
+      puts "Testing the protected access"
+    end
+
+    protected :access_test
+
     def to_s
        "(id:#@id,name:#@name)" #String formatting of an object 
     end
@@ -35,12 +43,20 @@ end
 emp1 = Employee.new(1016,"Ramkumar Kuppuchamy")
 emp2  = Employee.new(1006,"Aman Sharma")
 
-emp_id,emp_name = emp1.print_id, emp1.print_name
+#We should not call the private methods outside of the clas
+#mp_id,emp_name = emp1.getId, emp1.getName
 
 #calling the instance method
 
 Employee.printEmployee
+#Commenting the below lines, since testing the getters with private access
 
-puts "Employee1 Object: #{emp1}\n"
-puts "Employee2 Object : #{emp2.inspect}\nEmp id: #{emp_id}\nEmp Name: #{emp_name}"
+#puts "Employee1 Object: #{emp1}\n"
+#puts "Employee2 Object : #{emp2.inspect}\nEmp id: #{emp_id}\nEmp Name: #{emp_name}"
+
+puts" Testing Access" 
+
+# below call should give error since that method is defined as protected
+
+#emp1.access_test
 
