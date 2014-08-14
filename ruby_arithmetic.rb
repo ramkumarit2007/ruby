@@ -10,11 +10,14 @@ def sub(a,b)
 end
 
 def mul(*num)
- if num.count > 0
+=begin 
+if num.count > 0
     mul=1
     num.each do |t|
       mul *= t
     end
     puts "Multiply In arithmetic: #{mul}"
  end
+=end
+ num.inject {|result,element| result*element}
 end
