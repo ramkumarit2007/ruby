@@ -1,0 +1,1 @@
+this is the text tested via ruby program

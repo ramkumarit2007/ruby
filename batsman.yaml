@@ -1,0 +1,10 @@
+players:
+- name: Sachin
+  age: 40
+  team: Mumbai Indians
+- name: Yuvraj
+  age: 36
+  team: Bangalore
+teams:
+  name: All Teams
+  count: 8
