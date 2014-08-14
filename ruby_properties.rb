@@ -4,17 +4,33 @@
 
 require 'yaml'
 
-config = YAML.load_file(File.join(File.dirname(__FILE__), ARGV[0]))
+print <<EOF
+
+ This program will load the YAML config file and then, it will parse the file contents
+
+EOF
+
+config = ""
+
 #config = YAML.load_file("batsman.yaml")
 
-config.each do |players,data|
- puts "Key: #{players}, data: #{data}" 
- data.each do |list|
-   list.each do |key,value|
-     puts "key: #{key}, value: #{value}"
+
+def parse_contents(config)
+   config.each do |players,data|
+       puts "Key: #{players}, data: #{data}" 
+       data.each do |list|
+          list.each do |key,value|
+              puts "key: #{key}, value: #{value}"
+          end
+       end
    end
- end
 end
 
-puts "Names: #{config["teams"]["name"]}"
 
+#Load the config file to get the data
+if ARGV[0]
+   config = YAML.load_file(File.join(File.dirname(__FILE__), ARGV[0]))
+   parse_contents(config)
+else
+   puts "Pass the YAML file as the first argument"
+end
