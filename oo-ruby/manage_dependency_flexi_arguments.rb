@@ -72,6 +72,6 @@ puts "Circumference ::: #{@wheel.circumference}"
 #puts "Small Gear ::: #{Gear.new(42,32,24,1.25).gear_inches}"
 puts "Big Gear ::: #{Gear.new( :chainring => 42, :cog => 32, :rim => 26, :tire => 1.5).gear_inches}"
 
-#The below initialization misses two arguments
+#The below initialization misses two arguments, but with this design still works
 puts "Small Gear ::: #{Gear.new( :chainring => 42, :cog => 32).gear_inches}"
 
