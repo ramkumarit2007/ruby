@@ -17,7 +17,11 @@ class Bicycle
    def default_chain
       '10-speed'
    end
-
+  #If any of the sub classes does not implement this method, then raise an not implementedmethod error
+   def default_tire_size
+     raise NotImplementedError, 
+       "This #{self.class.to_s} can not respond_to :: #{__method__.to_s}"
+   end
 end
 
 #This class has the specific behaviour for the MountainBike
@@ -53,6 +57,13 @@ class RoadBike < Bicycle
    end
 end
 
+#This class has the specific behaviour for the RecumbentBike
+class RecumbentBike < Bicycle
+   def default_chain
+     '9-speed'
+   end
+end
+
 #road_bike = RoadBike.new(size: 'M',tape_color: 'Red', chain: '10-speed')
 road_bike = RoadBike.new(size: 'M', tape_color: 'Red')
 puts "Road Bike Tire Size::: #{road_bike.tire_size}\n chain::: #{road_bike.chain}"
@@ -60,3 +71,6 @@ puts "Road Bike Tire Size::: #{road_bike.tire_size}\n chain::: #{road_bike.chain
 #mount_bike = MountainBike.new(size: 'S', chain: '20-speed', front_shock: 'Manitou', rear_shock: 'Fox')
 mount_bike = MountainBike.new(size: 'S', front_shock: 'Manitou', rear_shock: 'Fox')
 puts "Mount Bike Tire Size::: #{mount_bike.tire_size}\n chain::: #{mount_bike.chain}"
+
+recumbent_bike = RecumbentBike.new
+puts "Recumbent Bike Chain::: #{recumbent_bike.chain}"
