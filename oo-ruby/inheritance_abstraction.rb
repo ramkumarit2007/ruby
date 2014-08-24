@@ -17,6 +17,11 @@ class Bicycle
    def default_chain
       '10-speed'
    end
+
+   def spares
+      { tire_size: tire_size, chain: chain}
+   end
+
   #If any of the sub classes does not implement this method, then raise an not implementedmethod error
    def default_tire_size
      raise NotImplementedError, 
@@ -55,6 +60,11 @@ class RoadBike < Bicycle
    def default_tire_size
      '20'
    end
+
+   def spares
+     #{ chain: '10-speed', tire_size: '20', tape_color: tape_color} 
+     super.merge({:tape_color => tape_color})
+   end
 end
 
 #This class has the specific behaviour for the RecumbentBike
@@ -62,15 +72,23 @@ class RecumbentBike < Bicycle
    def default_chain
      '9-speed'
    end
+
+   def default_tire_size
+     '3.2'
+   end
+   
 end
 
 #road_bike = RoadBike.new(size: 'M',tape_color: 'Red', chain: '10-speed')
 road_bike = RoadBike.new(size: 'M', tape_color: 'Red')
 puts "Road Bike Tire Size::: #{road_bike.tire_size}\n chain::: #{road_bike.chain}"
-
+puts "Spares:::: #{road_bike.spares}"
 #mount_bike = MountainBike.new(size: 'S', chain: '20-speed', front_shock: 'Manitou', rear_shock: 'Fox')
 mount_bike = MountainBike.new(size: 'S', front_shock: 'Manitou', rear_shock: 'Fox')
 puts "Mount Bike Tire Size::: #{mount_bike.tire_size}\n chain::: #{mount_bike.chain}"
+puts "Spares:::: #{mount_bike.spares}"
 
 recumbent_bike = RecumbentBike.new
 puts "Recumbent Bike Chain::: #{recumbent_bike.chain}"
+
+
