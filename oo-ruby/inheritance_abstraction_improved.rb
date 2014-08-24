@@ -17,6 +17,7 @@ class Bicycle
       @size = args[:size]
       @chain = args[:chain]  || default_chain
       @tire_size = args[:tire_size] || default_tire_size
+      #This method call actually removes the 'super'.initialize calling from subclass which intern makes these classes more decoupled
       post_initialize(args)
    end
 
@@ -28,10 +29,12 @@ class Bicycle
       { tire_size: tire_size, chain: chain}.merge(local_spares)
    end
 
+   #If the subclasses does not implement this method then no etc values will be merged with the default hash
    def local_spares
      {}
    end
 
+   #If the subclasses does not define this methods then nothing will get initialized etc other than super class attributes
    def post_initialize
      nil
    end
@@ -115,13 +118,13 @@ end
 #road_bike = RoadBike.new(size: 'M',tape_color: 'Red', chain: '10-speed')
 road_bike = RoadBike.new(size: 'M', tape_color: 'Red')
 puts "Road Bike Tire Size::: #{road_bike.tire_size}\n chain::: #{road_bike.chain}"
-puts "Spares:::: #{road_bike.spares}"
+puts " Spares:::: #{road_bike.spares}"
 #mount_bike = MountainBike.new(size: 'S', chain: '20-speed', front_shock: 'Manitou', rear_shock: 'Fox')
 mount_bike = MountainBike.new(size: 'S', front_shock: 'Manitou', rear_shock: 'Fox')
 puts "Mount Bike Tire Size::: #{mount_bike.tire_size}\n chain::: #{mount_bike.chain}"
-puts "Spares:::: #{mount_bike.spares}"
+puts " Spares:::: #{mount_bike.spares}"
 
 recumbent_bike = RecumbentBike.new(flag: 'Tall & Orange')
-puts "Recumbent Bike Chain::: #{recumbent_bike.chain}"
-puts "Spares:::: #{recumbent_bike.spares}"
+puts "Recumbent Bike Tire Size::: #{recumbent_bike.tire_size}\n Chain::: #{recumbent_bike.chain}"
+puts " Spares:::: #{recumbent_bike.spares}"
 
