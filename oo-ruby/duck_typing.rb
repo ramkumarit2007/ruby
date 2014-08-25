@@ -5,7 +5,7 @@
  --- this will not get executed as it needs dependency classes need to be created
 =end
 class Trip
-   attr_reader: :bicycles, :customers, :vehicle
+   attr_reader :bicycles, :customers, :vehicle
    def prepare(preparers)
      preparers.each do |preparer|
 	preparer.prepare_trip(self)
