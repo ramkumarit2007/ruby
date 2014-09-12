@@ -2,7 +2,7 @@ Any Queries::: Reach out to Ramkumar Kuppuchamy ::: ramkumarit2007@gmail.com
 
 How to Run:::
 
-- clone the repository
+- clone the repository "Ruby"
 - Navigare to "hotelroom_bookng" directory
 - Check the ruby bin directory by executing "which ruby" and update the path
   in each ruby file in that directory
