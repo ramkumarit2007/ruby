@@ -11,14 +11,16 @@ How to Run:::
 - Finally run the ./find_cheapest_hotel.rb
 
 
+Requirement Pending:::
+- Still the comparison for cheapest has to be made
+- Need to return rating from the specific hotel objects to choose the hotel when there is a tie in the rate
+
+
 Yet to Implement:::
 
 - Getting the inputs from user
 - Parsing the Input
 - Input Validation
-- Still the comparison for cheapest has to be made also need to return rating
-  from the specific hotel objects to choose the hotel when there is a tie in
-the rate
 - Reading the constant values(rates,days,etc..) from property or yaml file
 - correction in any object oriented design
 - More debuggers as needed
