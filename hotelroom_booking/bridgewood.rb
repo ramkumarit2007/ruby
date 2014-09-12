@@ -20,7 +20,7 @@ class BridgeWood < Hotel
 
     def get_fare(hotel)
         ridgewood_fare = calc_fare(hotel)
-	puts "Final Stay Fare @ LakeFood ::: #{ridgewood_fare}"
+	puts "Final Stay Fare @ BridgeWood ::: #{ridgewood_fare}"
 	ridgewood_fare
     end
 
