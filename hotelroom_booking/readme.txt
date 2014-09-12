@@ -1,4 +1,4 @@
-Any Queries::: Reach out to Ramkumar Kuppuchamy ::: ramkumarit2007@gmail.com
+:::cheapest Hotel Room Finding System:::
 
 How to Run:::
 
@@ -19,3 +19,7 @@ Yet to Implement:::
 - Reading the constant values(rates,days,etc..) from property or yaml file
 - correction in any object oriented design
 - More debuggers as needed
+
+Author:::
+
+For Any Queries::: Reach out to Ramkumar Kuppuchamy ::: ramkumarit2007@gmail.com
