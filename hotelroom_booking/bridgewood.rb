@@ -11,6 +11,7 @@ require_relative "hotel_helper"
 
 class BridgeWood < Hotel
 
+    attr_reader :rating
     #Included module hotelhelper for shared behaviours across hotels
     include HotelHelper
 

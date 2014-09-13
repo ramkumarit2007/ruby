@@ -3,16 +3,16 @@
 How to Run:::
 
 - clone the repository "Ruby"
-- Navigare to "hotelroom_bookng" directory
+- Navigate to "hotelroom_booking" directory
 - Check the ruby bin directory by executing "which ruby" and update the path
   in each ruby file in that directory
-- make sure all the files has execute permission - to do that execure "chmod
+- make sure all the files has execute permission - to do that execute "chmod
   +x *"
 - Finally run the ./find_cheapest_hotel.rb
 
 
-Requirement Pending:::
-- Still the comparison for cheapest has to be made
+Requirements Pending:::
+- Still the comparison for cheapest hotel has to be made
 - Need to return rating from the specific hotel objects to choose the hotel when there is a tie in the rate
 
 
