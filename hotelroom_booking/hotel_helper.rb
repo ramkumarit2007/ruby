@@ -20,7 +20,7 @@ module HotelHelper
         hotel_fare = 0
         cust_type = hotel.cust_type.downcase
         dates = hotel.dates
-        puts "Customer Type::: #{cust_type}\tDates:::#{dates}"
+        puts "\nCustomer Type::: #{cust_type}\tDates:::#{dates}"
         dates.each do | day |
              stay_day = know_your_day(day)
              hotel_fare += my_fare[cust_type][stay_day]
